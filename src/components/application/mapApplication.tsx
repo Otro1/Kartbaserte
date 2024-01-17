@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import  { MutableRefObject, useEffect, useRef, useState } from "react";
 
 import { Map, View } from "ol";
 import TileLayer from "ol/layer/Tile";
