@@ -8,13 +8,14 @@ import "./application.css";
 import "ol/ol.css";
 import { KommuneLayerCheckbox } from "../kommune/kommuneLayerCheckbox";
 
+// eslint-disable-next-line react-hooks/rules-of-hooks
+useGeographic();
 const map = new Map({
     layers: [new TileLayer({ source: new OSM() })],
     view: new View({ center: [10, 59], zoom: 8 }),
 });
 
 export function Application() {
-    useGeographic();
     function handleFocusUser(e: React.MouseEvent) {
         e.preventDefault();
         navigator.geolocation.getCurrentPosition((pos) => {
