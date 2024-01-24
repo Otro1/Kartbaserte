@@ -1,4 +1,3 @@
-// vite.config.js
 export default {
-    base: "/KartbaserteF2",
+    base: "/KartbaserteF2/",
 };
