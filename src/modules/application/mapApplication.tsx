@@ -13,40 +13,40 @@ import { Layer } from "ol/layer";
 useGeographic();
 
 const map = new Map({
-  view: new View({ center: [10, 59], zoom: 8 }),
+    view: new View({ center: [10, 59], zoom: 8 }),
 });
 
 export function MapApplication() {
-  function handleFocusUser(e: React.MouseEvent) {
-    e.preventDefault();
-    navigator.geolocation.getCurrentPosition((pos) => {
-      const { latitude, longitude } = pos.coords;
-      map.getView().animate({
-        center: [longitude, latitude],
-        zoom: 20,
-      });
-    });
-  }
+    function handleFocusUser(e: React.MouseEvent) {
+        e.preventDefault();
+        navigator.geolocation.getCurrentPosition((pos) => {
+            const { latitude, longitude } = pos.coords;
+            map.getView().animate({
+                center: [longitude, latitude],
+                zoom: 18.5,
+            });
+        });
+    }
 
-  const [layers, setLayers] = useState<Layer[]>([
-    new TileLayer({ source: new OSM() }),
-  ]);
+    const [layers, setLayers] = useState<Layer[]>([
+        new TileLayer({ source: new OSM() }),
+    ]);
 
-  const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
-  useEffect(() => map.setTarget(mapRef.current), []);
-  useEffect(() => map.setLayers(layers), [layers]);
-  return (
-    <>
-      <header>
-        <h1>Kommune kart</h1>
-      </header>
-      <nav>
-        <a href={"#"} onClick={handleFocusUser}>
-          Focus on me
-        </a>
-        <KommuneLayerCheckbox map={map} setLayers={setLayers} />
-      </nav>
-      <div ref={mapRef}></div>
-    </>
-  );
+    const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
+    useEffect(() => map.setTarget(mapRef.current), []);
+    useEffect(() => map.setLayers(layers), [layers]);
+    return (
+        <>
+            <header>
+                <h1>Kommune kart</h1>
+            </header>
+            <nav>
+                <a href={"#"} onClick={handleFocusUser}>
+                    Focus on me
+                </a>
+                <KommuneLayerCheckbox map={map} setLayers={setLayers} />
+            </nav>
+            <div ref={mapRef}></div>
+        </>
+    );
 }
