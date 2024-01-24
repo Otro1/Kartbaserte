@@ -13,6 +13,7 @@ import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
 import { Feature, Map, MapBrowserEvent, Overlay } from "ol";
 import { Polygon } from "ol/geom";
+import React from "react";
 
 type KommuneProperties = {
     kommunenummer: string;
