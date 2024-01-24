@@ -16,7 +16,7 @@ const map = new Map({
     view: new View({ center: [10, 59], zoom: 8 }),
 });
 
-export function Application() {
+export function MapApplication() {
     function handleFocusUser(e: React.MouseEvent) {
         e.preventDefault();
         navigator.geolocation.getCurrentPosition((pos) => {
