@@ -7,9 +7,10 @@ import { useGeographic } from "ol/proj";
 import "./application.css";
 import "ol/ol.css";
 import { KommuneLayerCheckbox } from "../kommune/kommuneLayerCheckbox";
+import { MapContext } from "../map/mapContext";
 import { Layer } from "ol/layer";
+import { KommuneAside } from "../kommune/kommuneAside";
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
 useGeographic();
 
 const map = new Map({
@@ -23,7 +24,7 @@ export function MapApplication() {
       const { latitude, longitude } = pos.coords;
       map.getView().animate({
         center: [longitude, latitude],
-        zoom: 18.5,
+        zoom: 10,
       });
     });
   }
@@ -31,12 +32,12 @@ export function MapApplication() {
   const [layers, setLayers] = useState<Layer[]>([
     new TileLayer({ source: new OSM() }),
   ]);
+  useEffect(() => map.setLayers(layers), [layers]);
 
   const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
   useEffect(() => map.setTarget(mapRef.current), []);
-  useEffect(() => map.setLayers(layers), [layers]);
   return (
-    <>
+    <MapContext.Provider value={{ layers, setLayers }}>
       <header>
         <h1>Kommune kart</h1>
       </header>
@@ -44,9 +45,12 @@ export function MapApplication() {
         <a href={"#"} onClick={handleFocusUser}>
           Focus on me
         </a>
-        <KommuneLayerCheckbox map={map} setLayers={setLayers} />
+        <KommuneLayerCheckbox />
       </nav>
-      <div ref={mapRef}></div>
-    </>
+      <main>
+        <div ref={mapRef}></div>
+        <KommuneAside />
+      </main>
+    </MapContext.Provider>
   );
 }
