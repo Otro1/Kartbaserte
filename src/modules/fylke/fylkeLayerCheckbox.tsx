@@ -5,11 +5,11 @@ import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
 
 const fylkeLayer = new VectorLayer({
-    className: "fylker",
-    source: new VectorSource({
-        url: "/KartbaserteF2/fylker.json",
-        format: new GeoJSON(),
-    }),
+  className: "fylker",
+  source: new VectorSource({
+    url: "/KartbaserteF2/fylker.json",
+    format: new GeoJSON(),
+  }),
 });
 
 export function FylkeLayerCheckbox() {

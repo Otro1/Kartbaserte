@@ -5,11 +5,11 @@ import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
 
 const kommuneLayer = new VectorLayer({
-    className: "kommuner",
-    source: new VectorSource({
-        url: "/KartbaserteF2/kommuner.json",
-        format: new GeoJSON(),
-    }),
+  className: "kommuner",
+  source: new VectorSource({
+    url: "/KartbaserteF2/kommuner.json",
+    format: new GeoJSON(),
+  }),
 });
 
 export function KommuneLayerCheckbox() {
