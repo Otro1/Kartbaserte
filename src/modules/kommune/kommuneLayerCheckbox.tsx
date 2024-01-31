@@ -21,6 +21,7 @@ type KommuneProperties = {
   navn: {
     sprak: string;
     navn: string;
+    
   }[];
 };
 
