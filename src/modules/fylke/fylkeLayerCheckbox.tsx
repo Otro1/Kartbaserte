@@ -5,11 +5,11 @@ import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
 
 const fylkeLayer = new VectorLayer({
-  className: "fylker",
-  source: new VectorSource({
-    url: "/fylker.json",
-    format: new GeoJSON(),
-  }),
+    className: "fylker",
+    source: new VectorSource({
+        url: "/KartbaserteF2/fylker.json",
+        format: new GeoJSON(),
+    }),
 });
 
 export function FylkeLayerCheckbox() {
@@ -34,7 +34,7 @@ export function FylkeLayerCheckbox() {
           checked={checked}
           onChange={(e) => setChecked(e.target.checked)}
         />
-        {checked ? "Hide" : "Show"} kommuner
+        {checked ? "Hide" : "Show"} fylker
       </label>
     </div>
   );
