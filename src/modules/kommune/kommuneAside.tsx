@@ -8,8 +8,6 @@ export function KommuneAside() {
   const kommuneLayer = layers.find((l) => l.getClassName() === "kommuner");
   const features = (kommuneLayer?.getSource() as VectorSource)?.getFeatures();
 
-  
-
   return (
     <aside className={kommuneLayer ? "visible" : "hidden"}>
       <div>
