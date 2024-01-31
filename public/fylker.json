@@ -1,6 +1,5 @@
 {
   "type": "FeatureCollection",
-  "crs": { "properties": { "name": "EPSG:3857" }, "type": "name" },
   "features": [
     {
       "type": "Feature",
@@ -57,7 +56,13 @@
         "opphav": null,
         "samiskforvaltningsomrade": false,
         "versjonid": "4.1",
-        "navn": [{ "sprak": "nor", "rekkefolge": "", "navn": "Rogaland" }],
+        "navn": [
+          {
+            "sprak": "nor",
+            "rekkefolge": "",
+            "navn": "Rogaland"
+          }
+        ],
         "lokalid": "173152",
         "datafangstdato": null,
         "oppdateringsdato": null,
@@ -132,7 +137,11 @@
         "samiskforvaltningsomrade": false,
         "versjonid": "4.1",
         "navn": [
-          { "sprak": "nor", "rekkefolge": "", "navn": "Vestfold og Telemark" }
+          {
+            "sprak": "nor",
+            "rekkefolge": "",
+            "navn": "Vestfold og Telemark"
+          }
         ],
         "lokalid": "173158173162",
         "datafangstdato": null,
@@ -230,7 +239,13 @@
         "opphav": null,
         "oppdateringsdato": null,
         "versjonid": "4.1",
-        "navn": [{ "sprak": "nor", "rekkefolge": "", "navn": "Nordland" }],
+        "navn": [
+          {
+            "sprak": "nor",
+            "rekkefolge": "",
+            "navn": "Nordland"
+          }
+        ],
         "lokalid": "173144",
         "datafangstdato": null,
         "fylkesnummer": "18",
@@ -292,7 +307,13 @@
         "opphav": null,
         "samiskforvaltningsomrade": false,
         "versjonid": "4.1",
-        "navn": [{ "sprak": "nor", "rekkefolge": "", "navn": "Agder" }],
+        "navn": [
+          {
+            "sprak": "nor",
+            "rekkefolge": "",
+            "navn": "Agder"
+          }
+        ],
         "lokalid": "173153173160",
         "datafangstdato": null,
         "oppdateringsdato": "20190301000000",
@@ -390,7 +411,13 @@
         "opphav": null,
         "samiskforvaltningsomrade": false,
         "versjonid": "4.1",
-        "navn": [{ "sprak": "nor", "rekkefolge": "", "navn": "Innlandet" }],
+        "navn": [
+          {
+            "sprak": "nor",
+            "rekkefolge": "",
+            "navn": "Innlandet"
+          }
+        ],
         "lokalid": "173154173155",
         "datafangstdato": null,
         "oppdateringsdato": "20190225000000",
@@ -457,7 +484,11 @@
         "samiskforvaltningsomrade": false,
         "versjonid": "4.1",
         "navn": [
-          { "sprak": "nor", "rekkefolge": "", "navn": "Møre og Romsdal" }
+          {
+            "sprak": "nor",
+            "rekkefolge": "",
+            "navn": "Møre og Romsdal"
+          }
         ],
         "lokalid": "173147",
         "datafangstdato": null,
@@ -540,7 +571,13 @@
         "opphav": null,
         "samiskforvaltningsomrade": false,
         "versjonid": "4.1",
-        "navn": [{ "sprak": "nor", "rekkefolge": "", "navn": "Vestland" }],
+        "navn": [
+          {
+            "sprak": "nor",
+            "rekkefolge": "",
+            "navn": "Vestland"
+          }
+        ],
         "lokalid": "173150173151",
         "datafangstdato": null,
         "oppdateringsdato": null,
@@ -572,7 +609,13 @@
         "opphav": null,
         "samiskforvaltningsomrade": false,
         "versjonid": "4.1",
-        "navn": [{ "sprak": "nor", "rekkefolge": "", "navn": "Oslo" }],
+        "navn": [
+          {
+            "sprak": "nor",
+            "rekkefolge": "",
+            "navn": "Oslo"
+          }
+        ],
         "lokalid": "173159",
         "datafangstdato": null,
         "oppdateringsdato": null,
@@ -674,7 +717,13 @@
         "opphav": null,
         "samiskforvaltningsomrade": false,
         "versjonid": "4.1",
-        "navn": [{ "sprak": "nor", "rekkefolge": "", "navn": "Viken" }],
+        "navn": [
+          {
+            "sprak": "nor",
+            "rekkefolge": "",
+            "navn": "Viken"
+          }
+        ],
         "lokalid": "173157173156173161",
         "datafangstdato": null,
         "oppdateringsdato": "20190225000000",
@@ -770,8 +819,16 @@
         "oppdateringsdato": null,
         "versjonid": "4.1",
         "navn": [
-          { "sprak": "nor", "rekkefolge": "1", "navn": "Trøndelag" },
-          { "sprak": "sma", "rekkefolge": "2", "navn": "Trööndelage" }
+          {
+            "sprak": "nor",
+            "rekkefolge": "1",
+            "navn": "Trøndelag"
+          },
+          {
+            "sprak": "sma",
+            "rekkefolge": "2",
+            "navn": "Trööndelage"
+          }
         ],
         "lokalid": "173146173145",
         "datafangstdato": null,
@@ -903,9 +960,21 @@
         "oppdateringsdato": null,
         "versjonid": "4.1",
         "navn": [
-          { "sprak": "nor", "rekkefolge": "1", "navn": "Troms og Finnmark" },
-          { "sprak": "fkv", "rekkefolge": "3", "navn": "Tromssa ja Finmarkku" },
-          { "sprak": "sme", "rekkefolge": "2", "navn": "Romsa ja Finnmárku" }
+          {
+            "sprak": "nor",
+            "rekkefolge": "1",
+            "navn": "Troms og Finnmark"
+          },
+          {
+            "sprak": "fkv",
+            "rekkefolge": "3",
+            "navn": "Tromssa ja Finmarkku"
+          },
+          {
+            "sprak": "sme",
+            "rekkefolge": "2",
+            "navn": "Romsa ja Finnmárku"
+          }
         ],
         "lokalid": "173143173142",
         "datafangstdato": null,
