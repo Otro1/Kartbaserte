@@ -13,7 +13,7 @@ import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
 import { Feature, Map, MapBrowserEvent, Overlay } from "ol";
 import { Polygon } from "ol/geom";
-import { Switch } from "@material-ui/core";
+
 
 import React from "react";
 
