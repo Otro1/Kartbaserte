@@ -10,11 +10,11 @@ import { FeatureLike } from "ol/Feature";
 import { MapContext } from "../map/mapContext";
 
 const schoolLayer = new VectorLayer({
-    source: new VectorSource({
-        url: "/KartbaserteF2/skoler.json",
-        format: new GeoJSON(),
-    }),
-    style: schoolStyle,
+  source: new VectorSource({
+    url: "/KartbaserteF2/skoler.json",
+    format: new GeoJSON(),
+  }),
+  style: schoolStyle,
 });
 
 type SchoolProperties = {
