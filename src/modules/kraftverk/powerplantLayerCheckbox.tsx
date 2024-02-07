@@ -18,9 +18,9 @@ const powerplantLayer = new VectorLayer({
 });
 
 type PowerplantProperties = {
-    vannkraf_3: string;
-    maksytelse: number;
-    vannkraf_2: "Mini" | "Micro";
+  vannkraf_3: string;
+  maksytelse: number;
+  vannkraf_2: "Mini" | "Micro";
 };
 
 type PowerplantFeature = {
@@ -31,13 +31,13 @@ function powerplantStyle(f: FeatureLike) {
   const feature = f as PowerplantFeature;
   const powerplant = feature.getProperties();
   return new Style({
-      image: new Circle({
-          stroke: new Stroke({ color: "white", width: 1 }),
-          fill: new Fill({
-              color: powerplant.vannkraf_2 === "Mini" ? "blue" : "purple",
-          }),
-          radius: 4 + powerplant.maksytelse / 0.5,
+    image: new Circle({
+      stroke: new Stroke({ color: "white", width: 1 }),
+      fill: new Fill({
+        color: powerplant.vannkraf_2 === "Mini" ? "blue" : "purple",
       }),
+      radius: 4 + powerplant.maksytelse / 0.5,
+    }),
   });
 }
 
@@ -45,23 +45,23 @@ function activePowerplantStyle(f: FeatureLike, resolution: number) {
   const feature = f as PowerplantFeature;
   const powerplant = feature.getProperties();
   return new Style({
-      image: new Circle({
-          stroke: new Stroke({ color: "white", width: 3 }),
-          fill: new Fill({
-              color: powerplant.vannkraf_2 === "Mini" ? "blue" : "purple",
-          }),
-          radius: 4 + powerplant.maksytelse / 1.5,
+    image: new Circle({
+      stroke: new Stroke({ color: "white", width: 3 }),
+      fill: new Fill({
+        color: powerplant.vannkraf_2 === "Mini" ? "blue" : "purple",
       }),
-      text:
-          resolution < 75
-              ? new Text({
-                    text: powerplant.vannkraf_3,
-                    offsetY: -15,
-                    font: "bold 14px sans-serif",
-                    fill: new Fill({ color: "black" }),
-                    stroke: new Stroke({ color: "white", width: 2 }),
-                })
-              : undefined,
+      radius: 4 + powerplant.maksytelse / 1.5,
+    }),
+    text:
+      resolution < 75
+        ? new Text({
+            text: powerplant.vannkraf_3,
+            offsetY: -15,
+            font: "bold 14px sans-serif",
+            fill: new Fill({ color: "black" }),
+            stroke: new Stroke({ color: "white", width: 2 }),
+          })
+        : undefined,
   });
 }
 
