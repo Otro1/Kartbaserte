@@ -9,7 +9,7 @@ import { useLayer } from "../map/useLayer";
 const fylkeLayer = new VectorLayer({
   className: "fylker",
   source: new VectorSource({
-    url: "/fylker.json",
+    url: "/KartbaserteF2/fylker.json",
     format: new GeoJSON(),
   }),
   style: (feature) => {

@@ -8,9 +8,11 @@
   height: 100dvh;
 }
 
-nav {
+.nav {
   display: flex;
-  gap: 1em;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
 }
 
 main {
@@ -34,4 +36,49 @@ main aside.visible {
 main aside > * {
   padding: 0.5rem;
   min-width: 25ch;
+}
+.map-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.info-box {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+  padding: 20px;
+  background-color: rgba(175, 175, 175, 0.8);
+  border-radius: 15px;
+  width: 200px; /* make the box thinner */
+  height: 250px; /* make the box taller */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto; /* add a scrollbar if the content overflows */
+}
+.aside-box {
+  position: absolute;
+  bottom: 20px;
+  left: 270px; /* Adjust this value as needed to create the desired space */
+  z-index: 10;
+  padding: 20px;
+  background-color: rgba(175, 175, 175, 0.8);
+  border-radius: 15px;
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
 }

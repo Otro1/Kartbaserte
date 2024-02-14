@@ -63,28 +63,43 @@ export function MapApplication() {
 
   const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
   useEffect(() => map.setTarget(mapRef.current), []);
+
   return (
     <MapContext.Provider
       value={{ map, vectorLayers, setVectorLayers, setBaseLayer }}
     >
-      <header>
-        <h1>Kommune kart</h1>
-      </header>
-      <nav>
-        <BaseLayerDropdown />
-        <a href={"#"} onClick={handleFocusUser}>
-          Focus on me
-        </a>
-        <KommuneLayerCheckbox />
-        <FylkeLayerCheckbox />
-        <SchoolLayerCheckbox />
-      </nav>
-      <main>
-        <div ref={mapRef}></div>
-        <FylkeAside />
-        <KommuneAside />
-        <SchoolAside />
-      </main>
+      <div className="map-container">
+        <div ref={mapRef} className="map" />
+
+        <div className="info-box">
+          <header>
+            <h1>TheMap</h1>
+          </header>
+
+          <nav className="nav">
+            <div className="dropdown">
+              <BaseLayerDropdown />
+            </div>
+            <a href={"#"} onClick={handleFocusUser}>
+              Focus on me
+            </a>
+            <div className="checkbox">
+              <KommuneLayerCheckbox />
+            </div>
+            <div className="checkbox">
+              <FylkeLayerCheckbox />
+            </div>
+            <div className="checkbox">
+              <SchoolLayerCheckbox />
+            </div>
+          </nav>
+        </div>
+        <div className="aside-box">
+          <FylkeAside />
+          <KommuneAside />
+          <SchoolAside />
+        </div>
+      </div>
     </MapContext.Provider>
   );
 }
