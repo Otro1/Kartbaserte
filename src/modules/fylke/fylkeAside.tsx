@@ -24,6 +24,7 @@ type FylkeFeature = {
 function getStedsnavn(navn: Stedsnavn[]) {
   return navn.find((n) => n.sprak === "nor")?.navn;
 }
+//test
 
 function useFylkeFeatures() {
   const { map, layers } = useContext(MapContext);
