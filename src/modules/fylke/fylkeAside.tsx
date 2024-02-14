@@ -7,7 +7,7 @@ import { Feature } from "ol";
 type FylkeVectorLayer = VectorLayer<VectorSource<FylkeFeature>>;
 
 interface FylkeProperties {
-  fylkenummer: string;
+  fylkesnummer: string;
   navn: Stedsnavn[];
 }
 
@@ -17,18 +17,17 @@ interface Stedsnavn {
   navn: string;
 }
 
-type FylkeFeature = {
+export type FylkeFeature = {
   getProperties(): FylkeProperties;
 } & Feature;
 
 function getStedsnavn(navn: Stedsnavn[]) {
   return navn.find((n) => n.sprak === "nor")?.navn;
 }
-//test
 
 function useFylkeFeatures() {
-  const { map, layers } = useContext(MapContext);
-  const layer = layers.find(
+  const { map, vectorLayers } = useContext(MapContext);
+  const layer = vectorLayers.find(
     (l) => l.getClassName() === "fylker",
   ) as FylkeVectorLayer;
   const [features, setFeatures] = useState<FylkeFeature[]>();
