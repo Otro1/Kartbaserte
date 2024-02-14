@@ -6,7 +6,7 @@ import { optionsFromCapabilities } from "ol/source/WMTS";
 import { WMTSCapabilities } from "ol/format";
 import proj4 from "proj4";
 import { register } from "ol/proj/proj4";
-import 'tailwindcss/tailwind.css';
+import "tailwindcss/tailwind.css";
 
 proj4.defs([
   [
@@ -74,18 +74,18 @@ export function BaseLayerDropdown() {
   }, []);
 
   const baseLayerOptions = [
-    
     {
       id: "xyz",
       name: "xyz",
       layer: new TileLayer({
-          source: new XYZ({
-              attributions: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
-              url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-              maxZoom: 19,
-          })
-      })
-  },    
+        source: new XYZ({
+          attributions:
+            "Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+          url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+          maxZoom: 19,
+        }),
+      }),
+    },
     {
       id: "osm",
       name: "Open Street Map",
