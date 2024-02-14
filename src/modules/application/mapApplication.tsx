@@ -21,7 +21,7 @@ import { SchoolAside } from "../skoler/schoolAside";
 import { BaseLayerDropdown } from "../baseLayer/baseLayerDropdown";
 import { View } from "ol";
 
-export function mapApplication() {
+export function MapApplication() {
   function handleFocusUser(e: React.MouseEvent) {
     e.preventDefault();
     navigator.geolocation.getCurrentPosition((pos) => {
