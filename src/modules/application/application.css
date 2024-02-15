@@ -82,3 +82,14 @@ main aside > * {
   gap: 15px;
   overflow-y: auto;
 }
+.info-box {
+  transition: transform 0.3s ease-in-out;
+}
+
+.info-box.visible {
+  transform: translateX(0);
+}
+
+.info-box.hidden {
+  transform: translateX(-100%);
+}

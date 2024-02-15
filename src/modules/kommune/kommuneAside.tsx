@@ -56,7 +56,7 @@ function useKommuneFeatures() {
   useEffect(() => {
     map.getView().on("change", handleViewChange);
     return () => map.getView().un("change", handleViewChange);
-  }, [map]);
+  }, [map, features]); // Add features as a dependency
 
   return { kommuneLayer: layer, features, visibleFeatures };
 }

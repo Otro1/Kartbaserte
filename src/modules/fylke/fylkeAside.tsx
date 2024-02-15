@@ -56,7 +56,7 @@ function useFylkeFeatures() {
   useEffect(() => {
     map.getView().on("change", handleViewChange);
     return () => map.getView().un("change", handleViewChange);
-  }, [map]);
+  }, [map, features]);
 
   return { layer, features, visibleFeatures };
 }
