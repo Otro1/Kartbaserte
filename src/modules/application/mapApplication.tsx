@@ -65,6 +65,17 @@ export function MapApplication() {
     }
   }, [baseLayer]);
 
+  const [isAsideBoxVisible, setAsideBoxVisible] = useState(true);
+
+  useEffect(() => {
+    const toggleButton = document.getElementById("toggleAsideButton");
+    if (toggleButton) {
+      toggleButton.addEventListener("click", () => {
+        setAsideBoxVisible(!isAsideBoxVisible);
+      });
+    }
+  }, [isAsideBoxVisible]);
+
   const markerSource = new VectorSource();
   const markerLayer = new VectorLayer({
     source: markerSource,
@@ -86,17 +97,22 @@ export function MapApplication() {
     >
       <div className="map-container">
         <div ref={mapRef} className="map" />
-        <div className="aside-box">
-          <FylkeAside />
-          <KommuneAside />
-          <SchoolAside />
-        </div>
+        {isAsideBoxVisible && (
+          <div className="aside-box">
+            <FylkeAside />
+            <KommuneAside />
+            <SchoolAside />
+          </div>
+        )}
         <div className="info-box">
           <header>
             <h2>TheMap</h2>
           </header>
           <nav className="nav">
             <div className="switches">
+              <div className="styled-link" id="toggleAsideButton">
+                Toggle Aside
+              </div>
               <a href={"#"} onClick={handleFocusUser} className="styled-link">
                 Focus on me
               </a>
