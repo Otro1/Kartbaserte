@@ -20,9 +20,14 @@ import { KommuneAside } from "../kommune/kommuneAside";
 import { FylkeLayerCheckbox } from "../fylke/fylkeLayerCheckbox";
 import { fylkeLayer } from "../fylke/fylkeLayerCheckbox";
 import { FylkeAside } from "../fylke/fylkeAside";
+import { powerplantLayer } from "../kraftverk/powerplantLayerCheckbox";
 import { SchoolLayerCheckbox } from "../skoler/schoolLayerCheckbox";
 import { schoolLayer } from "../skoler/schoolLayerCheckbox";
-
+import { Feature } from "ol";
+import Point from "ol/geom/Point";
+import { fromLonLat } from "ol/proj";
+import VectorSource from "ol/source/Vector";
+import VectorLayer from "ol/layer/Vector";
 import { SchoolAside } from "../skoler/schoolAside";
 import { BaseLayerDropdown } from "../baseLayer/baseLayerDropdown";
 import { View } from "ol";
@@ -34,7 +39,7 @@ export function MapApplication() {
       const { latitude, longitude } = pos.coords;
       map.getView().animate({
         center: [longitude, latitude],
-        zoom: 12,
+        zoom: 18,
       });
     });
   }
@@ -60,10 +65,15 @@ export function MapApplication() {
     }
   }, [baseLayer]);
 
+  const markerSource = new VectorSource();
+  const markerLayer = new VectorLayer({
+    source: markerSource,
+  });
+
   const [vectorLayers, setVectorLayers] = useState<Layer[]>([]);
   const layers = useMemo(
-    () => [baseLayer, ...vectorLayers],
-    [baseLayer, vectorLayers],
+    () => [baseLayer, markerLayer, ...vectorLayers],
+    [baseLayer, markerLayer, vectorLayers],
   );
   useEffect(() => map.setLayers(layers), [layers]);
 
@@ -86,7 +96,7 @@ export function MapApplication() {
             <div className="dropdown">
               <BaseLayerDropdown />
             </div>
-            <a href={"#"} onClick={handleFocusUser}>
+            <a href={"#"} onClick={handleFocusUser} className="styled-link">
               Focus on me
             </a>
             <div className="checkbox">
@@ -97,6 +107,9 @@ export function MapApplication() {
             </div>
             <div className="checkbox">
               <Switch layer={schoolLayer} /> Skoler
+            </div>
+            <div className="checkbox">
+              <Switch layer={powerplantLayer} /> Kraftverk
             </div>
           </nav>
         </div>

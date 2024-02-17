@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/leaflet": "^1.9.8",
     "@types/proj4": "^2.5.5",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -9,6 +10,7 @@
     "vite": "^5.0.12"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
     "ol": "^8.2.0",
     "proj4": "^2.10.0",
     "react": "^18.2.0",

@@ -133,10 +133,29 @@ main aside > * {
   z-index: 12; /* Set a higher z-index for the dropdown menu */
   overflow: visible;
 }
-.custom-dropdown .react-select__menu {
-  position: absolute;
-  top: 100%; /* Position the dropdown below the input */
-  left: 0;
-  zindex: 12; /* Set a higher z-index for the dropdown menu */
-  overflow: visible;
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.styled-link {
+  display: inline-block;
+  width: 100px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  background: #ccc;
+  border-radius: 25px; /* Adjust as needed */
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px; /* Adjust as needed */
+  color: #000;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.styled-link:active {
+  background: #1654cf;
 }
