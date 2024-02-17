@@ -86,37 +86,37 @@ export function MapApplication() {
     >
       <div className="map-container">
         <div ref={mapRef} className="map" />
-
-        <div className="info-box">
-          <header>
-            <h2>TheMap</h2>
-          </header>
-
-          <nav className="nav">
-            <div className="dropdown">
-              <BaseLayerDropdown />
-            </div>
-            <a href={"#"} onClick={handleFocusUser} className="styled-link">
-              Focus on me
-            </a>
-            <div className="checkbox">
-              <Switch layer={fylkeLayer} /> Fylker
-            </div>
-            <div className="checkbox">
-              <Switch layer={kommuneLayer} /> Kommuner
-            </div>
-            <div className="checkbox">
-              <Switch layer={schoolLayer} /> Skoler
-            </div>
-            <div className="checkbox">
-              <Switch layer={powerplantLayer} /> Kraftverk
-            </div>
-          </nav>
-        </div>
         <div className="aside-box">
           <FylkeAside />
           <KommuneAside />
           <SchoolAside />
+        </div>
+        <div className="info-box">
+          <header>
+            <h2>TheMap</h2>
+          </header>
+          <nav className="nav">
+            <div className="switches">
+              <a href={"#"} onClick={handleFocusUser} className="styled-link">
+                Focus on me
+              </a>
+              <div className="checkbox">
+                <Switch layer={fylkeLayer} /> Fylker
+              </div>
+              <div className="checkbox">
+                <Switch layer={kommuneLayer} /> Kommuner
+              </div>
+              <div className="checkbox">
+                <Switch layer={schoolLayer} /> Skoler
+              </div>
+              <div className="checkbox">
+                <Switch layer={powerplantLayer} /> Kraftverk
+              </div>
+            </div>
+            <div className="dropdown">
+              <BaseLayerDropdown />
+            </div>
+          </nav>
         </div>
       </div>
     </MapContext.Provider>

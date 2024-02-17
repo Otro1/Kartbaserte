@@ -148,9 +148,6 @@ export function BaseLayerDropdown() {
 
   return (
     <div className="dropdown">
-      <label htmlFor="baseLayerDropdown" className="dropdown-label">
-        Select Base Layer
-      </label>
       <Select
         id="baseLayerDropdown"
         options={baseLayerOptions}
