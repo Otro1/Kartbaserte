@@ -9,7 +9,7 @@ import { Point } from "ol/geom";
 import { FeatureLike } from "ol/Feature";
 import { MapContext } from "../map/mapContext";
 
-const schoolLayer = new VectorLayer({
+export const schoolLayer = new VectorLayer({
   source: new VectorSource({
     url: "/KartbaserteF2/skoler.json",
     format: new GeoJSON(),

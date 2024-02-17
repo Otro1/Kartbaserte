@@ -10,13 +10,19 @@ import { OSM } from "ol/source";
 
 import "./application.css";
 import "ol/ol.css";
+import Switch from "../map/switch";
 import { KommuneLayerCheckbox } from "../kommune/kommuneLayerCheckbox";
+import { kommuneLayer } from "../kommune/kommuneLayerCheckbox";
+
 import { map, MapContext } from "../map/mapContext";
 import { Layer } from "ol/layer";
 import { KommuneAside } from "../kommune/kommuneAside";
 import { FylkeLayerCheckbox } from "../fylke/fylkeLayerCheckbox";
+import { fylkeLayer } from "../fylke/fylkeLayerCheckbox";
 import { FylkeAside } from "../fylke/fylkeAside";
 import { SchoolLayerCheckbox } from "../skoler/schoolLayerCheckbox";
+import { schoolLayer } from "../skoler/schoolLayerCheckbox";
+
 import { SchoolAside } from "../skoler/schoolAside";
 import { BaseLayerDropdown } from "../baseLayer/baseLayerDropdown";
 import { View } from "ol";
@@ -73,7 +79,7 @@ export function MapApplication() {
 
         <div className="info-box">
           <header>
-            <h1>TheMap</h1>
+            <h2>TheMap</h2>
           </header>
 
           <nav className="nav">
@@ -84,13 +90,13 @@ export function MapApplication() {
               Focus on me
             </a>
             <div className="checkbox">
-              <KommuneLayerCheckbox />
+              <Switch layer={fylkeLayer} /> Fylker
             </div>
             <div className="checkbox">
-              <FylkeLayerCheckbox />
+              <Switch layer={kommuneLayer} /> Kommuner
             </div>
             <div className="checkbox">
-              <SchoolLayerCheckbox />
+              <Switch layer={schoolLayer} /> Skoler
             </div>
           </nav>
         </div>

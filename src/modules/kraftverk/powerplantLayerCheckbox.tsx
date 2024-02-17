@@ -9,7 +9,7 @@ import { Point } from "ol/geom";
 import { FeatureLike } from "ol/Feature";
 import { MapContext } from "../map/mapContext";
 
-const powerplantLayer = new VectorLayer({
+export const powerplantLayer = new VectorLayer({
   source: new VectorSource({
     url: "/KartbaserteF2/kraftverk.json",
     format: new GeoJSON(),

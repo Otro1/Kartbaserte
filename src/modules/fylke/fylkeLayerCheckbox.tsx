@@ -6,7 +6,7 @@ import { Fill, Stroke, Style, Text } from "ol/style";
 import { FylkeFeature } from "./fylkeAside";
 import { useLayer } from "../map/useLayer";
 
-const fylkeLayer = new VectorLayer({
+export const fylkeLayer = new VectorLayer({
   className: "fylker",
   source: new VectorSource({
     url: "/KartbaserteF2/fylker.json",

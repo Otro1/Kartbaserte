@@ -7,6 +7,13 @@ import { WMTSCapabilities } from "ol/format";
 import proj4 from "proj4";
 import { register } from "ol/proj/proj4";
 import "tailwindcss/tailwind.css";
+import Select, { ActionMeta, SingleValue } from "react-select";
+
+interface OptionType {
+  value: string;
+  label: string;
+  layer: any; // replace 'any' with the actual type of 'layer'
+}
 
 proj4.defs([
   [
@@ -73,7 +80,7 @@ export function BaseLayerDropdown() {
     loadPolar().then((source) => polarLayer.setSource(source));
   }, []);
 
-  const baseLayerOptions = [
+  const baseLayerOptions: OptionType[] = [
     {
       id: "xyz",
       name: "xyz",
@@ -120,29 +127,48 @@ export function BaseLayerDropdown() {
       name: "Arktisk",
       layer: polarLayer,
     },
-  ];
-  const [selectedLayer, setSelectedLayer] = useState(baseLayerOptions[0]);
-  useEffect(() => setBaseLayer(selectedLayer.layer), [selectedLayer]);
+  ].map(({ id, name, layer }) => ({ value: id, label: name, layer }));
+
+  const [selectedOption, setSelectedOption] = useState<OptionType | null>(
+    baseLayerOptions[0],
+  );
+
+  useEffect(() => {
+    if (selectedOption) {
+      setBaseLayer(selectedOption.layer);
+    }
+  }, [selectedOption]);
+
+  const handleChange = (
+    selectedOption: SingleValue<OptionType>,
+    actionMeta: ActionMeta<OptionType>,
+  ) => {
+    setSelectedOption(selectedOption);
+  };
 
   return (
-    <div>
-      <select
-        onChange={(e) =>
-          setSelectedLayer(
-            baseLayerOptions.find((l) => l.id === e.target.value)!,
-          )
-        }
-        value={selectedLayer.id}
-      >
-        {baseLayerOptions.map(({ id, name }) => (
-          <option key={id} value={id}>
-            {name}
-          </option>
-        ))}
-      </select>
-      {selectedLayer.name}
-      {map.getView().getProjection().getCode()}
-      {selectedLayer.layer.getSource()?.getProjection()?.getCode()}
+    <div className="dropdown">
+      <label htmlFor="baseLayerDropdown" className="dropdown-label">
+        Select Base Layer
+      </label>
+      <Select
+        id="baseLayerDropdown"
+        options={baseLayerOptions}
+        value={selectedOption}
+        onChange={handleChange}
+        menuPlacement="top"
+        className="custom-dropdown" // Add this class
+        styles={{
+          menu: (provided, state) => ({
+            ...provided,
+            marginTop: 0, // Reset the default margin-top
+          }),
+        }}
+      />
+
+      {/*  {selectedOption?.label} */}
+      {/*  {map.getView().getProjection().getCode()} */}
+      {/*  {selectedOption?.layer.getSource()?.getProjection()?.getCode()} */}
     </div>
   );
 }
