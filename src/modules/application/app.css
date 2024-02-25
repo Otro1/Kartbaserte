@@ -133,3 +133,20 @@ main {
   color: rgb(234, 242, 250);
   font-family: "Roboto", sans-serif;
 }
+
+.roadTunnelCheckbox {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px 2px;
+  font-size: 12px;
+  text-align: none;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  width: 95px;
+  height: 20px;
+  color: rgb(234, 242, 250);
+  font-family: "Roboto", sans-serif;
+}

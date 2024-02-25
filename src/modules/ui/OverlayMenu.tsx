@@ -4,6 +4,7 @@ import { RegionLayerCheckbox } from "../layers/regions/regionLayerCheckbox";
 import { map, MapContext } from "../map/MapContext";
 import { ShelterLayerCheckbox } from "../layers/shelters/ShelterLayerCheckbox";
 import { PowerplantLayerCheckbox } from "../layers/powerplants/powerplantLayerCheckbox";
+import { RoadTunnelLayerCheckbox } from "../layers/roads/roadTunnelLayerCheckbox";
 
 export default function OverlayMenu() {
   const { map } = useContext(MapContext);
@@ -55,6 +56,7 @@ export default function OverlayMenu() {
             <button className="focusOslo" onClick={handleFocusOslo}>
               Focus on Oslo!
             </button>
+            <RoadTunnelLayerCheckbox />
             <RegionLayerCheckbox />
             <PowerplantLayerCheckbox />
             <ShelterLayerCheckbox />
