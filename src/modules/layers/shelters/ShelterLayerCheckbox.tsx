@@ -107,7 +107,10 @@ export function ShelterLayerCheckbox() {
 
   return (
     <span className="shelterCheckbox">
-      <button className="focusMe" onClick={() => setChecked(!checked)}>
+      <button
+        className={`focusMe buttons ${checked ? "buttons-open" : ""}`}
+        onClick={() => setChecked(!checked)}
+      >
         {checked ? "Hide" : "Show"} Emergency Shelters
       </button>
       {/*

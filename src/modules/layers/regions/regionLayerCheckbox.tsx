@@ -94,7 +94,10 @@ export function RegionLayerCheckbox() {
   return (
     <>
       <span className="regionCheckbox">
-        <button className="focusMe" onClick={() => setChecked(!checked)}>
+        <button
+          className={`focusMe buttons ${checked ? "buttons-open" : ""}`}
+          onClick={() => setChecked(!checked)}
+        >
           {checked ? "Hide" : "Show"} Regions
         </button>
         <div ref={overlayRef} className="info">

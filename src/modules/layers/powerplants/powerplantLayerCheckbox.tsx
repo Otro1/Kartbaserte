@@ -98,10 +98,12 @@ export function PowerplantLayerCheckbox() {
       map?.un("click", handlePointerClick);
     };
   }, [checked]);
-
   return (
     <span className="powerplantCheckbox">
-      <button className="focusMe" onClick={() => setChecked(!checked)}>
+      <button
+        className={`focusMe buttons ${checked ? "buttons-open" : ""}`}
+        onClick={() => setChecked(!checked)}
+      >
         {checked ? "Hide" : "Show"} Powerplants
       </button>
     </span>
