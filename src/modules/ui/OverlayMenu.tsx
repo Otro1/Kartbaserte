@@ -49,7 +49,7 @@ export default function OverlayMenu() {
           boxShadow: "3px -1px 34px -15px rgba(0,0,0,0.75)",
         }}
       >
-        <h1>MAPZTER</h1>
+        <h1>O2Map</h1>
         <button
           className={`menu ${isOpen ? "menu-open" : ""}`}
           onClick={() => setIsOpen(!isOpen)}
