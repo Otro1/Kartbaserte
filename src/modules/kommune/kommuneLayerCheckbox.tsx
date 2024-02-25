@@ -13,7 +13,7 @@ import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
 import { Feature, Map, MapBrowserEvent, Overlay } from "ol";
 import { Polygon } from "ol/geom";
-import { Switch } from "@material-ui/core";
+
 import React from "react";
 
 type KommuneProperties = {
@@ -83,13 +83,10 @@ export function KommuneLayerCheckbox({
   return (
     <div>
       <label>
-        <Switch
+        <input
+          type={"checkbox"}
           checked={checked}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setChecked(e.target.checked)
-          }
-          name="checked"
-          inputProps={{ "aria-label": "secondary checkbox" }}
+          onChange={(e) => setChecked(e.target.checked)}
         />
         {checked ? "Hide" : "Show"} kommune layer
       </label>
