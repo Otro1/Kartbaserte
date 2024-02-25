@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: unset;
+}
+.ol-zoom {
+  top: auto !important;
+  bottom: 2.5em !important;
+  right: 1.5em !important;
+  left: auto !important;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  color: rgb(238, 238, 241);
+}
+
+#root {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: 100dvh;
+}
+main {
+  height: 100dvh;
+}
+
+.map-container {
+  position: relative;
+}
+
+.info {
+  translate: -50% calc(-50% - 35px);
+  padding: 0.4em;
+  border-radius: 5px;
+  background-color: white;
+  opacity: "95%";
+}
+
+.focusMe {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  border-radius: 12px;
+  color: rgb(234, 242, 250);
+  padding: 5px 8px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 180px;
+  height: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.focusMe:active {
+  background-color: rgb(234, 242, 250);
+  color: rgb(15, 32, 51);
+}
+
+.focusOslo {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  border-radius: 12px;
+  color: rgb(234, 242, 250);
+  padding: 5px 8px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 180px;
+  height: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.focusOslo:active {
+  background-color: rgb(234, 242, 250);
+  color: rgb(15, 32, 51);
+}
+
+.menu {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  border-radius: 12px;
+  color: rgb(234, 242, 250);
+  padding: 5px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.menu:active {
+  background-color: rgb(234, 242, 250);
+  color: rgb(15, 32, 51);
+}
+
+.menu-open {
+  background-color: rgb(234, 242, 250);
+  color: rgb(15, 32, 51);
+}
+
+.buttons {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  border-radius: 12px;
+  color: rgb(234, 242, 250);
+  padding: 5px 8px;
+  text-align: left;
+  text-decoration: none;
+  display: flex;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.buttons:active {
+  background-color: rgb(234, 242, 250);
+  color: rgb(15, 32, 51);
+}
+
+.buttons-open {
+  background-color: rgb(234, 242, 250);
+  color: rgb(15, 32, 51);
+}
+/* 
+.regionCheckbox {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px 2px;
+  font-size: 12px;
+  text-align: none;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  width: 180px;
+  height: 20px;
+  color: rgb(234, 242, 250);
+  font-family: "Roboto", sans-serif;
+}
+
+.shelterCheckbox {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px 2px;
+  font-size: 11px;
+
+  text-align: none;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  width: 180px;
+  height: 20px;
+  color: rgb(234, 242, 250);
+  font-family: "Roboto", sans-serif;
+}
+
+.powerplantCheckbox {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px 2px;
+  font-size: 12px;
+  text-align: none;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  width: 180px;
+  height: 20px;
+  color: rgb(234, 242, 250);
+  font-family: "Roboto", sans-serif;
+}
+
+.roadTunnelCheckbox {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px 2px;
+  font-size: 12px;
+  text-align: none;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  width: 180px;
+  height: 20px;
+  color: rgb(234, 242, 250);
+  font-family: "Roboto", sans-serif;
+}
+ */
