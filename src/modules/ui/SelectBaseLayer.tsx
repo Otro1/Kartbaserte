@@ -178,8 +178,8 @@ export function SelectBaseLayer() {
                 style={{
                   maxHeight: "50px",
                   maxWidth: "50px",
-                  height: "50px",
-                  width: "50px",
+                  height: "25px",
+                  width: "25px",
                   cursor: "pointer",
                 }}
               />

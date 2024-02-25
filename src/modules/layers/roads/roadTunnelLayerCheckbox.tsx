@@ -100,14 +100,9 @@ export function RoadTunnelLayerCheckbox() {
 
   return (
     <span className={"roadTunnelCheckbox"}>
-      <label>
-        <input
-          type={"checkbox"}
-          checked={checked}
-          onChange={(e) => setChecked(e.target.checked)}
-        />
+      <button className="focusMe" onClick={() => setChecked(!checked)}>
         {checked ? "Hide" : "Show"} Road Tunnels
-      </label>
+      </button>
     </span>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { SelectBaseLayer } from "./SelectBaseLayer";
 import { RegionLayerCheckbox } from "../layers/regions/regionLayerCheckbox";
 import { map, MapContext } from "../map/MapContext";
@@ -8,6 +8,7 @@ import { RoadTunnelLayerCheckbox } from "../layers/roads/roadTunnelLayerCheckbox
 
 export default function OverlayMenu() {
   const { map } = useContext(MapContext);
+  const [isOpen, setIsOpen] = useState(false);
 
   function handleFocusUser(e: React.MouseEvent) {
     e.preventDefault();
@@ -40,61 +41,84 @@ export default function OverlayMenu() {
           opacity: "95%",
           zIndex: "20",
           display: "flex",
+          textAlign: "center",
+          flexDirection: "column",
           justifyContent: "center",
           padding: "20px",
           borderRadius: "5px",
           boxShadow: "3px -1px 34px -15px rgba(0,0,0,0.75)",
         }}
       >
-        <div>
-          <h1>MAPZTER</h1>
-          <div className={"w-full pr-3 pl-3 pb-1"}>
-            <br />
-            <button className="focusMe" onClick={handleFocusUser}>
-              Focus on me!
-            </button>
-            <button className="focusOslo" onClick={handleFocusOslo}>
-              Focus on Oslo!
-            </button>
-            <RoadTunnelLayerCheckbox />
-            <RegionLayerCheckbox />
-            <PowerplantLayerCheckbox />
-            <ShelterLayerCheckbox />
+        <h1>MAPZTER</h1>
+        <button
+          className={`menu ${isOpen ? "menu-open" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? "Hide Content" : "Show Content"}
+        </button>
 
-            {(SelectBaseLayer as { layer?: any }).layer
-              ?.getSource()
-              ?.getProjection()
-              ?.getCode()}
-            <br />
-            <br />
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <h3
-                style={{
-                  margin: "0",
-                  color: "rgb(234, 242, 250)",
-                }}
-              >
-                Debug info:
-              </h3>
-              <span
-                style={{
-                  marginLeft: "10px",
-                  color: "rgb(238, 238, 241)",
-                }}
-              >
-                {map.getView().getProjection().getCode()}
-              </span>
+        {isOpen && (
+          <div
+            style={{
+              backgroundColor: "rgb(15, 32, 51)",
+              opacity: "95%",
+              zIndex: "20",
+              display: "flex",
+              justifyContent: "center",
+              padding: "20px",
+              borderRadius: "5px",
+              boxShadow: "3px -1px 34px -15px rgba(0,0,0,0.75)",
+            }}
+          >
+            <div>
+              <div className={"w-full pr-3 pl-3 pb-1"}>
+                <br />
+                <button className="focusMe" onClick={handleFocusUser}>
+                  Focus on me!
+                </button>
+                <button className="focusOslo" onClick={handleFocusOslo}>
+                  Focus on Oslo!
+                </button>
+                <RoadTunnelLayerCheckbox />
+                <RegionLayerCheckbox />
+                <PowerplantLayerCheckbox />
+                <ShelterLayerCheckbox />
+
+                {(SelectBaseLayer as { layer?: any }).layer
+                  ?.getSource()
+                  ?.getProjection()
+                  ?.getCode()}
+                <br />
+                <br />
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <h3
+                    style={{
+                      margin: "0",
+                      color: "rgb(234, 242, 250)",
+                    }}
+                  >
+                    Debug info:
+                  </h3>
+                  <span
+                    style={{
+                      marginLeft: "10px",
+                      color: "rgb(238, 238, 241)",
+                    }}
+                  >
+                    {map.getView().getProjection().getCode()}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
+        )}
         <div
           style={{
             position: "fixed",
             bottom: "20px",
             right: "50px",
-            height: "auto",
-            width: "400px",
+            height: "11",
+            width: "185px",
             backgroundColor: "rgb(15, 32, 51)",
             opacity: "95%",
             zIndex: "20",

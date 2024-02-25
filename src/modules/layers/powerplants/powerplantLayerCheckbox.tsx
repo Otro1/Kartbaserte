@@ -100,15 +100,10 @@ export function PowerplantLayerCheckbox() {
   }, [checked]);
 
   return (
-    <span className={"powerplantCheckbox"}>
-      <label>
-        <input
-          type={"checkbox"}
-          checked={checked}
-          onChange={(e) => setChecked(e.target.checked)}
-        />
+    <span className="powerplantCheckbox">
+      <button className="focusMe" onClick={() => setChecked(!checked)}>
         {checked ? "Hide" : "Show"} Powerplants
-      </label>
+      </button>
     </span>
   );
 }

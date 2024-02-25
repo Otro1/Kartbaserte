@@ -106,15 +106,10 @@ export function ShelterLayerCheckbox() {
   }, [checked]);
 
   return (
-    <span className={"shelterCheckbox"}>
-      <label>
-        <input
-          type={"checkbox"}
-          checked={checked}
-          onChange={(e) => setChecked(e.target.checked)}
-        />
+    <span className="shelterCheckbox">
+      <button className="focusMe" onClick={() => setChecked(!checked)}>
         {checked ? "Hide" : "Show"} Emergency Shelters
-      </label>
+      </button>
       {/*
             activeFeature && " (" + activeFeature.getProperties().navn + ")"
         */}
