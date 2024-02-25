@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { MapApplication } from "./modules/application/mapApplication";
+import App from "./modules/application/App";
 
-const root = ReactDOM.createRoot(document.getElementById("root")!);
+const root = ReactDOM.createRoot(document.getElementById("root")!); // ! -> To tell TS that the root element is there.
 
-root.render(<MapApplication />);
+root.render(<App />);
