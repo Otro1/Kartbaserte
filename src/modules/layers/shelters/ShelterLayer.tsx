@@ -17,7 +17,6 @@ export const shelterLayer = new VectorLayer({
 });
 
 interface shelterProperties {
-  // This has to match the content of the actual data
   romnr: number;
   plasser: number;
   adresse: string;

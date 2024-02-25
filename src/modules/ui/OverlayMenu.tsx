@@ -3,6 +3,7 @@ import { SelectBaseLayer } from "./SelectBaseLayer";
 import { RegionLayerCheckbox } from "../layers/regions/regionLayerCheckbox";
 import { map, MapContext } from "../map/MapContext";
 import { ShelterLayerCheckbox } from "../layers/shelters/ShelterLayerCheckbox";
+import { PowerplantLayerCheckbox } from "../layers/powerplants/powerplantLayerCheckbox";
 
 export default function OverlayMenu() {
   const { map } = useContext(MapContext);
@@ -55,7 +56,9 @@ export default function OverlayMenu() {
               Focus on Oslo!
             </button>
             <RegionLayerCheckbox />
+            <PowerplantLayerCheckbox />
             <ShelterLayerCheckbox />
+
             {(SelectBaseLayer as { layer?: any }).layer
               ?.getSource()
               ?.getProjection()
