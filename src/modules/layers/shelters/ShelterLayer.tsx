@@ -10,7 +10,7 @@ import { boundingExtent } from "ol/extent";
 export const shelterLayer = new VectorLayer({
   className: "shelters",
   source: new VectorSource({
-    url: "/kws2100-publishing-a-map-application-williamcaamot/layers/emergencyShelters.json",
+    url: "/KartbaserteF2/layers/emergencyShelters.json",
     format: new GeoJSON(),
   }),
   style: shelterStyle,
