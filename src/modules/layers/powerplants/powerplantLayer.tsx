@@ -9,7 +9,7 @@ import { FeatureLike } from "ol/Feature";
 export const powerplantLayer = new VectorLayer({
   className: "powerplants",
   source: new VectorSource({
-    url: "/KartbaserteF2/layers/powerplant.json",
+    url: "/Kartbaserte/layers/powerplant.json",
     format: new GeoJSON(),
   }),
   style: powerplantStyle,
