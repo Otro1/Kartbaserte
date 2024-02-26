@@ -72,9 +72,9 @@ export const foodStoreLayer = new VectorLayer({
 });
 
 interface foodStoreProperties {
-  romnr: number;
-  plasser: number;
-  adresse: string;
+  name: string;
+  address: string;
+  phone: string;
 }
 
 export type foodStoreFeature = {
@@ -102,7 +102,7 @@ export function activeFoodStoreStyle(f: FeatureLike, resolution: number) {
     text:
       resolution < 75
         ? new Text({
-            text: foodStore.adresse,
+            text: foodStore.name,
             offsetY: -15,
             font: "bold 14px arial",
             fill: new Fill({ color: "black" }),

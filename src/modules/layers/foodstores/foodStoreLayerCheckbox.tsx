@@ -109,15 +109,19 @@ export function FoodStoreLayerCheckbox() {
     </span>
   );
 }
-
 function foodStoreFeatureDetails(foodStoreFeature: foodStoreFeature) {
+  const properties = foodStoreFeature.getProperties();
+  console.log(properties.name);
+  console.log(properties.address);
+  console.log(properties.phone);
+
   return (
     <>
       <h2>Food Store feature details:</h2>
       <ul>
-        <li>Adresse: {foodStoreFeature.getProperties().adresse}</li>
-        <li>Plasser: {foodStoreFeature.getProperties().plasser}</li>
-        <li>Rommr: {foodStoreFeature.getProperties().romnr}</li>
+        <li>Name: {properties.name}</li>
+        <li>Address: {properties.address}</li>
+        <li>Phone: {properties.phone}</li>
       </ul>
     </>
   );
