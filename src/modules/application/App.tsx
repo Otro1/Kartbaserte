@@ -17,7 +17,6 @@ import ActiveFeatureInfo from "../ui/ActiveFeatureInfo";
 import proj4 from "proj4";
 import { register } from "ol/proj/proj4";
 
-// Register the EPSG:25833 projection
 proj4.defs("EPSG:25833", "+proj=utm +zone=33 +ellps=GRS80 +units=m +no_defs");
 register(proj4);
 

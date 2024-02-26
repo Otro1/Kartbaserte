@@ -14,7 +14,7 @@ export const foodStoreLayer = new VectorLayer({
   source: new VectorSource({
     loader: function (extent, resolution, projection) {
       var url = "https://kassal.app/api/v1/physical-stores?size=100";
-      console.log("Fetching data from:", url); // Log the URL being fetched
+      console.log("Fetching data from:", url);
       fetch(url, {
         method: "GET",
         headers: {
@@ -22,12 +22,9 @@ export const foodStoreLayer = new VectorLayer({
         },
       })
         .then((response) => {
-          console.log("Response:", response); // Log the response
           return response.json();
         })
         .then((json) => {
-          console.log("JSON data:", json); // Log the JSON data
-          // Transform the data into GeoJSON format
           var geojson = {
             type: "FeatureCollection",
             features: json.data.map((store: any) => ({
@@ -53,18 +50,16 @@ export const foodStoreLayer = new VectorLayer({
               },
             })),
           };
-          console.log("GeoJSON:", geojson); // Log the GeoJSON data
 
           var format = new GeoJSON();
           var features = format.readFeatures(geojson, {
             dataProjection: "EPSG:4326",
             featureProjection: projection,
           }) as Feature<Geometry>[];
-          console.log("Features:", features); // Log the features
           (this as VectorSource<Feature<Geometry>>).addFeatures(features);
         })
         .catch((error) => {
-          console.error("Error:", error); // Log any errors
+          console.error("Error:", error);
         });
     },
   }),

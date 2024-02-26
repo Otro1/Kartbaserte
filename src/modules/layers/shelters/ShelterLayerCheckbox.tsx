@@ -10,15 +10,12 @@ import {
 import { Geometry } from "ol/geom";
 
 export function ShelterLayerCheckbox() {
-  //TODO Should school layer be moved here?
-
   const [checked, setChecked] = useState(false);
   const { map, setLayers, setActiveFeatureDetails } = useContext(MapContext);
 
   const [activeFeature, setActiveFeature] = useState<shelterFeature>();
 
   useEffect(() => {
-    // Add and remove layer from the layers based on clicking on the checkbox
     if (checked) {
       setLayers((old) => [...old, shelterLayer]);
     }
@@ -51,8 +48,7 @@ export function ShelterLayerCheckbox() {
     );
 
     if (features.length === 1) {
-      // Assuming shelterFeature is a type alias or interface extending Feature<Geometry>
-      setActiveFeature(features[0] as unknown as shelterFeature); // Use unknown as an intermediary if direct casting is not possible
+      setActiveFeature(features[0] as unknown as shelterFeature);
     } else {
       setActiveFeature(undefined);
     }

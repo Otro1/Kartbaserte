@@ -32,21 +32,20 @@ const polarLayer = new TileLayer();
 async function loadFlyfotoLayer() {
   const res = await fetch(
     "https://opencache.statkart.no/gatekeeper/gk/gk.open_nib_web_mercator_wmts_v2?SERVICE=WMTS&REQUEST=GetCapabilities",
-  ); // Where de we find the information about thr map?
+  );
   const text = await res.text();
 
   const result = parser.read(text);
   const options = optionsFromCapabilities(result, {
-    // The URL above can contain multiple views, here we decide what we want
-    layer: "Nibcache_web_mercator_v2", //What layer
-    matrixSet: "default028mm", //Whatever this means, Johannes doesn't seem to know
+    layer: "Nibcache_web_mercator_v2",
+    matrixSet: "default028mm",
   });
   // @ts-ignore
   return new WMTS(options)!;
 }
 
 async function loadPolarLayer() {
-  const res = await fetch("/arctic.xml"); // Where de we find the information about thr map?
+  const res = await fetch("/arctic.xml");
   const text = await res.text();
 
   const result = parser.read(text);
@@ -61,7 +60,7 @@ async function loadPolarLayer() {
 async function loadKartverketLayer() {
   const res = await fetch(
     "https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?request=GetCapabilities&service=WMS",
-  ); // Where de we find the information about thr map?
+  );
   const text = await res.text();
 
   const result = parser.read(text);
@@ -78,7 +77,7 @@ export function SelectBaseLayer() {
 
   useEffect(() => {
     loadFlyfotoLayer().then((source) => ortoPhotoLayer.setSource(source));
-    // loadPolarLayer().then((source) => polarLayer.setSource(source));
+    loadPolarLayer().then((source) => polarLayer.setSource(source));
     loadKartverketLayer().then((source) => kartverketLayer.setSource(source));
   }, []);
 
