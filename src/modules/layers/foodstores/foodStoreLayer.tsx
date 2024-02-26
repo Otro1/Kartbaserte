@@ -13,7 +13,7 @@ export const foodStoreLayer = new VectorLayer({
   className: "foodStores",
   source: new VectorSource({
     loader: function (extent, resolution, projection) {
-      var url = "https://kassal.app/api/v1/physical-stores";
+      var url = "https://kassal.app/api/v1/physical-stores?size=100";
       console.log("Fetching data from:", url); // Log the URL being fetched
       fetch(url, {
         method: "GET",
