@@ -159,7 +159,7 @@ export function SelectBaseLayer() {
               key={id}
               style={{
                 padding: "2px",
-                width: "auto",
+                width: "200px",
                 display: "flex",
                 justifyContent: "center",
 
