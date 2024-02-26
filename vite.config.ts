@@ -1,3 +1,3 @@
 export default {
-  base: "/Kartbaserte/",
+  base: "/KartbaserteF2",
 };

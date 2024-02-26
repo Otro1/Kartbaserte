@@ -9,7 +9,7 @@ import { FeatureLike } from "ol/Feature";
 export const roadTunnelLayer = new VectorLayer({
   className: "roadTunnels",
   source: new VectorSource({
-    url: "/Kartbaserte/layers/roadTunnels.json",
+    url: "/KartbaserteF2/layers/roadTunnels.json",
     format: new GeoJSON(),
   }),
   style: roadTunnelStyle,

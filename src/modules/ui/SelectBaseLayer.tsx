@@ -87,13 +87,13 @@ export function SelectBaseLayer() {
       id: "osm",
       name: "Open Street Map",
       layer: new TileLayer({ source: new OSM() }),
-      imageUrl: "/KartbaserteF2/images/openLayerstreetMapImage.png",
+      imageUrl: "/KartbaserteF2F2/images/openLayerstreetMapImage.png",
     },
     {
       id: "stadia",
       name: "Stadia",
       layer: new TileLayer({ source: new StadiaMaps({ layer: "outdoors" }) }),
-      imageUrl: "/KartbaserteF2/images/stadiaLayerImage.png",
+      imageUrl: "/KartbaserteF2F2/images/stadiaLayerImage.png",
     },
     {
       id: "stadia_dark",
@@ -101,25 +101,25 @@ export function SelectBaseLayer() {
       layer: new TileLayer({
         source: new StadiaMaps({ layer: "alidade_smooth_dark" }),
       }),
-      imageUrl: "/KartbaserteF2/images/stadiaDarkLayerImage.png",
+      imageUrl: "/KartbaserteF2F2/images/stadiaDarkLayerImage.png",
     },
     {
       id: "kartverket",
       name: "Kartverket",
       layer: kartverketLayer,
-      imageUrl: "/KartbaserteF2/images/kartverketLayerImage.png",
+      imageUrl: "/KartbaserteF2F2/images/kartverketLayerImage.png",
     },
     {
       id: "ortophoto",
       name: "Flyfoto",
       layer: ortoPhotoLayer,
-      imageUrl: "/KartbaserteF2/images/flyfotoLayerImage.png",
+      imageUrl: "/KartbaserteF2F2/images/flyfotoLayerImage.png",
     },
     {
       id: "polar",
       name: "Arktisk",
       layer: polarLayer,
-      imageUrl: "/KartbaserteF2/images/arcticLayerImage.png",
+      imageUrl: "/KartbaserteF2F2/images/arcticLayerImage.png",
     },
     {
       id: "satellite",
@@ -132,7 +132,7 @@ export function SelectBaseLayer() {
           maxZoom: 19,
         }),
       }),
-      imageUrl: "/KartbaserteF2/images/satelliteLayerImage.png",
+      imageUrl: "/KartbaserteF2F2/images/satelliteLayerImage.png",
     },
   ];
   const [selectedLayer, setSelectedLayer] = useState(baseLayerOptions[0]);

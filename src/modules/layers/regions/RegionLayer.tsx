@@ -6,7 +6,7 @@ import { Fill, Stroke, Style } from "ol/style";
 export const regionLayer = new VectorLayer({
   //className: "regions",
   source: new VectorSource({
-    url: "/Kartbaserte/layers/civilDefenceRegions.json",
+    url: "/KartbaserteF2/layers/civilDefenceRegions.json",
     format: new GeoJSON(),
   }),
   style: style,
