@@ -5,6 +5,8 @@ import { map, MapContext } from "../map/MapContext";
 import { ShelterLayerCheckbox } from "../layers/shelters/ShelterLayerCheckbox";
 import { PowerplantLayerCheckbox } from "../layers/powerplants/powerplantLayerCheckbox";
 import { RoadTunnelLayerCheckbox } from "../layers/roads/roadTunnelLayerCheckbox";
+import { CountriesLayerCheckbox } from "../layers/countries/countriesLayerCheckbox";
+import { HealthRegionLayerCheckbox } from "../layers/healthRegion/healthRegionLayerCheckbox";
 
 export default function OverlayMenu() {
   const { map } = useContext(MapContext);
@@ -81,6 +83,8 @@ export default function OverlayMenu() {
                 </button>
                 <RoadTunnelLayerCheckbox />
                 <RegionLayerCheckbox />
+                <HealthRegionLayerCheckbox />
+                <CountriesLayerCheckbox />
                 <PowerplantLayerCheckbox />
                 <ShelterLayerCheckbox />
 
