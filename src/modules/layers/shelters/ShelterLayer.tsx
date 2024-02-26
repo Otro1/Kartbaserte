@@ -10,7 +10,7 @@ import { boundingExtent } from "ol/extent";
 export const shelterLayer = new VectorLayer({
   className: "shelters",
   source: new VectorSource({
-    url: "/KartbaserteF2F2/layers/emergencyShelters.json",
+    url: "/KartbaserteF2/layers/emergencyShelters.json",
     format: new GeoJSON(),
   }),
   style: shelterStyle,
