@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { MapContext } from "../map/MapContext";
-
 export default function ActiveFeatureInfo() {
   const { activeFeatureDetails, setActiveFeatureDetails } =
     useContext(MapContext);
@@ -25,7 +24,7 @@ export default function ActiveFeatureInfo() {
           boxShadow: "3px -1px 34px -15px rgba(0,0,0,0.75)",
         }}
       >
-        <div>{activeFeatureDetails}</div>
+        <div dangerouslySetInnerHTML={{ __html: activeFeatureDetails }} />
         <div
           style={{
             position: "relative",
