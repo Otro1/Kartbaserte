@@ -61,63 +61,67 @@ export default function OverlayMenu() {
           {isOpen ? "Hide Content" : "Show Content"}
         </button>
 
-        {isOpen && (
-          <div
-            style={{
-              backgroundColor: "rgb(15, 32, 51)",
-              opacity: "95%",
-              zIndex: "20",
-              display: "flex",
-              justifyContent: "center",
-              padding: "20px",
-              borderRadius: "5px",
-              boxShadow: "3px -1px 34px -15px rgba(0,0,0,0.75)",
-            }}
-          >
-            <div>
-              <div className={"w-full pr-3 pl-3 pb-1"}>
-                <br />
-                <button className="focusMe" onClick={handleFocusUser}>
-                  Focus on me!
-                </button>
-                <button className="focusOslo" onClick={handleFocusOslo}>
-                  Focus on Oslo!
-                </button>
-                <FoodStoreLayerCheckbox />
-                <RoadTunnelLayerCheckbox />
-                <RegionLayerCheckbox />
-                <HealthRegionLayerCheckbox />
-                <PowerplantLayerCheckbox />
-                <ShelterLayerCheckbox />
+        <div
+          style={{
+            backgroundColor: "rgb(15, 32, 51)",
+            opacity: "95%",
+            zIndex: "20",
+            display: isOpen ? "flex" : "none", // Hide or show the content by changing the display property
+            justifyContent: "center",
+            padding: "20px",
+            borderRadius: "5px",
+            boxShadow: "3px -1px 34px -15px rgba(0,0,0,0.75)",
+          }}
+        >
+          <div>
+            <div className={"w-full pr-3 pl-3 pb-1"}>
+              <br />
+              <button className="focusMe" onClick={handleFocusUser}>
+                Focus on me!
+              </button>
+              <button className="focusOslo" onClick={handleFocusOslo}>
+                Focus on Oslo!
+              </button>
+              <FoodStoreLayerCheckbox />
+              <RoadTunnelLayerCheckbox />
+              <RegionLayerCheckbox />
+              <HealthRegionLayerCheckbox />
+              <PowerplantLayerCheckbox />
+              <ShelterLayerCheckbox />
 
-                {(SelectBaseLayer as { layer?: any }).layer
-                  ?.getSource()
-                  ?.getProjection()
-                  ?.getCode()}
-                <br />
-                <br />
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <h3
-                    style={{
-                      margin: "0",
-                      color: "rgb(234, 242, 250)",
-                    }}
-                  >
-                    Debug info:
-                  </h3>
-                  <span
-                    style={{
-                      marginLeft: "10px",
-                      color: "rgb(238, 238, 241)",
-                    }}
-                  >
-                    {map.getView().getProjection().getCode()}
-                  </span>
-                </div>
+              {(SelectBaseLayer as { layer?: any }).layer
+                ?.getSource()
+                ?.getProjection()
+                ?.getCode()}
+              <br />
+              <br />
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <h3
+                  style={{
+                    margin: "0",
+                    color: "rgb(234, 242, 250)",
+                  }}
+                >
+                  Debug info:
+                </h3>
+                <span
+                  style={{
+                    marginLeft: "10px",
+                    color: "rgb(238, 238, 241)",
+                  }}
+                >
+                  {map.getView().getProjection().getCode()}
+                </span>
               </div>
             </div>
           </div>
-        )}
+        </div>
+
         <div
           style={{
             position: "fixed",
