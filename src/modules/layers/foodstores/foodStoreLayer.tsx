@@ -7,20 +7,14 @@ import { Geometry, Point } from "ol/geom";
 import { FeatureLike } from "ol/Feature";
 import { boundingExtent } from "ol/extent";
 
-const token = "Z1ZxfmNqzylz2fbCUWZawoyMkaWeo4xnNitq8GM9";
-
 export const foodStoreLayer = new VectorLayer({
   className: "foodStores",
   source: new VectorSource({
     loader: function (extent, resolution, projection) {
-      var url = "https://kassal.app/api/v1/physical-stores?size=100";
-      console.log("Fetching data from:", url);
-      fetch(url, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      // Update the URL to point to your server endpoint
+      var url = "http://localhost:3000/api/foodstores";
+
+      fetch(url)
         .then((response) => {
           return response.json();
         })
