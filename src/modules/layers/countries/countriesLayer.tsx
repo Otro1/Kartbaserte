@@ -1,4 +1,4 @@
-import VectorLayer from "ol/layer/Vector";
+/* import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
 import { Fill, Stroke, Style } from "ol/style";
@@ -23,3 +23,4 @@ export function selectedStyle() {
     fill: new Fill({ color: [0, 0, 0, 0.2] }),
   });
 }
+ */

@@ -5,7 +5,7 @@ import { map, MapContext } from "../map/MapContext";
 import { ShelterLayerCheckbox } from "../layers/shelters/ShelterLayerCheckbox";
 import { PowerplantLayerCheckbox } from "../layers/powerplants/powerplantLayerCheckbox";
 import { RoadTunnelLayerCheckbox } from "../layers/roads/roadTunnelLayerCheckbox";
-import { CountriesLayerCheckbox } from "../layers/countries/countriesLayerCheckbox";
+/* import { CountriesLayerCheckbox } from "../layers/countries/countriesLayerCheckbox";*/
 import { HealthRegionLayerCheckbox } from "../layers/healthRegion/healthRegionLayerCheckbox";
 import { FoodStoreLayerCheckbox } from "../layers/foodstores/foodStoreLayerCheckbox";
 
@@ -86,7 +86,6 @@ export default function OverlayMenu() {
                 <RoadTunnelLayerCheckbox />
                 <RegionLayerCheckbox />
                 <HealthRegionLayerCheckbox />
-                <CountriesLayerCheckbox />
                 <PowerplantLayerCheckbox />
                 <ShelterLayerCheckbox />
 
