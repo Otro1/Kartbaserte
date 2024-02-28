@@ -1,7 +1,7 @@
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
-import { Circle, Fill, Stroke, Style, Text } from "ol/style";
+import { Icon, Fill, Stroke, Style, Text } from "ol/style";
 import { Feature } from "ol";
 import { Geometry, Point } from "ol/geom";
 import { FeatureLike } from "ol/Feature";
@@ -64,6 +64,7 @@ interface foodStoreProperties {
   name: string;
   address: string;
   phone: string;
+  logo: string;
 }
 
 export type foodStoreFeature = {
@@ -71,10 +72,13 @@ export type foodStoreFeature = {
 } & Feature<Point>;
 
 function foodStoreStyle(f: FeatureLike) {
+  const feature = f as foodStoreFeature;
+  const foodStore = feature.getProperties();
+
   return new Style({
-    image: new Circle({
-      radius: 5, // Set a fixed radius for the circle
-      fill: new Fill({ color: "black" }), // Set the fill color to black
+    image: new Icon({
+      src: foodStore.logo,
+      scale: 0.1, // Adjust scale to fit the logo in the map
     }),
   });
 }
@@ -84,9 +88,9 @@ export function activeFoodStoreStyle(f: FeatureLike, resolution: number) {
   const foodStore = feature.getProperties();
 
   return new Style({
-    image: new Circle({
-      radius: 10, // Set a fixed radius for the circle
-      fill: new Fill({ color: "black" }), // Set the fill color to black
+    image: new Icon({
+      src: foodStore.logo,
+      scale: 0.2, // Adjust scale to fit the logo in the map
     }),
     text:
       resolution < 75

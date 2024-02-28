@@ -9,7 +9,7 @@ import { OSM } from "ol/source";
 useGeographic();
 
 export const map = new Map({
-  view: new View({ center: [10, 61], zoom: 7 }),
+  view: new View({ center: [10.7, 59.9], zoom: 12 }),
 });
 
 export const MapContext = React.createContext<{
