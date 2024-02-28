@@ -8,10 +8,11 @@ import { RoadTunnelLayerCheckbox } from "../layers/roads/roadTunnelLayerCheckbox
 /* import { CountriesLayerCheckbox } from "../layers/countries/countriesLayerCheckbox";*/
 import { HealthRegionLayerCheckbox } from "../layers/healthRegion/healthRegionLayerCheckbox";
 import { FoodStoreLayerCheckbox } from "../layers/foodstores/foodStoreLayerCheckbox";
+import { geocode } from "../map/Geocoder";
 
 export default function OverlayMenu() {
   const { map } = useContext(MapContext);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   function handleFocusUser(e: React.MouseEvent) {
     e.preventDefault();
@@ -30,6 +31,15 @@ export default function OverlayMenu() {
       zoom: 12,
     });
   }
+
+  const [address, setAddress] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const coords = await geocode(address);
+    map.getView().setCenter(coords as number[]);
+    map.getView().setZoom(18);
+  };
 
   return (
     <>
@@ -88,12 +98,29 @@ export default function OverlayMenu() {
               <HealthRegionLayerCheckbox />
               <PowerplantLayerCheckbox />
               <ShelterLayerCheckbox />
-
+              <br />
+              <br />
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <input
+                    type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    className="searchBar"
+                    placeholder="Enter an address"
+                  />
+                </div>
+                <div>
+                  <button type="submit" className="buttons">
+                    Search
+                  </button>
+                </div>
+              </form>
               {(SelectBaseLayer as { layer?: any }).layer
                 ?.getSource()
                 ?.getProjection()
                 ?.getCode()}
-              <br />
+              {/*  <br />
               <br />
               <div
                 style={{
@@ -117,7 +144,7 @@ export default function OverlayMenu() {
                 >
                   {map.getView().getProjection().getCode()}
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

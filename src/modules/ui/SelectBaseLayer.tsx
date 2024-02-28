@@ -44,19 +44,6 @@ async function loadFlyfotoLayer() {
   return new WMTS(options)!;
 }
 
-async function loadPolarLayer() {
-  const res = await fetch("/arctic.xml");
-  const text = await res.text();
-
-  const result = parser.read(text);
-  const options = optionsFromCapabilities(result, {
-    layer: "arctic_cascading",
-    matrixSet: "3575",
-  });
-  // @ts-ignore
-  return new WMTS(options)!;
-}
-
 async function loadKartverketLayer() {
   const res = await fetch(
     "https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?request=GetCapabilities&service=WMS",
@@ -77,7 +64,7 @@ export function SelectBaseLayer() {
 
   useEffect(() => {
     loadFlyfotoLayer().then((source) => ortoPhotoLayer.setSource(source));
-    loadPolarLayer().then((source) => polarLayer.setSource(source));
+
     loadKartverketLayer().then((source) => kartverketLayer.setSource(source));
   }, []);
 
@@ -114,12 +101,7 @@ export function SelectBaseLayer() {
       layer: ortoPhotoLayer,
       imageUrl: "/Kartbaserte/images/flyfotoLayerImage.png",
     },
-    {
-      id: "polar",
-      name: "Arktisk",
-      layer: polarLayer,
-      imageUrl: "/Kartbaserte/images/arcticLayerImage.png",
-    },
+
     {
       id: "satellite",
       name: "Satellite",

@@ -137,6 +137,23 @@ main {
   background-color: rgb(234, 242, 250);
   color: rgb(15, 32, 51);
 }
+
+.searchBar {
+  background-color: transparent;
+  border: 2px solid rgb(234, 242, 250);
+  border-radius: 12px;
+  color: rgb(234, 242, 250);
+  padding: 5px 8px;
+  text-align: left;
+  text-decoration: none;
+  display: flex;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 88%;
+  height: 30px;
+}
+
 /* 
 .regionCheckbox {
   background-color: transparent;
