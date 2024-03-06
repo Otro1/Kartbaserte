@@ -27,3 +27,5 @@ export const MapContext = React.createContext<{
   setActiveFeatureDetails: () => {},
   activeFeatureDetails: undefined,
 });
+
+/* TEst */
